@@ -1,0 +1,4 @@
+﻿Los patrones Factory Method, Abstract Factory y Prototype son similares al builder, en especial el Abstract Factory
+
+Override se usa para invalidar un metodo base, modifica la implementación original original del metodo.
+En este caso si no sobrecargas el metodo, se ejecutará el metodo ToString() heredado de Object y nos devolvera un string que representa el objeto actual.

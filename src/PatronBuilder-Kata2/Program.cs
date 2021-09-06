@@ -4,65 +4,6 @@ using System.Linq;
 
 namespace PatronBuilder_Kata2
 {
-	public class Coffee
-	{
-		public string Sort { get; set; }
-		public List<Milk> Milk { get; set; }
-		public List<Sugar> Sugar { get; set; }
-
-		public Coffee(string sort, List<Milk> milk, List<Sugar> sugar)
-		{
-			Sort = sort;
-			Milk = milk;
-			Sugar = sugar;
-		}
-		public override string ToString()
-		{			
-			string milk = string.Join(", ", Milk.Select(e => e.ToString()).ToArray());
-			string sugar = string.Join(", ", Sugar.Select(e => e.ToString()).ToArray());
-			return $"Coffee: {Sort}. {milk} {sugar}";
-		}
-	}
-
-	public class Milk
-	{
-		public readonly double Fat;
-
-		public Milk(double fat)
-		{
-			Fat = fat;
-		}
-		public override string ToString()
-		{
-			return $"Milk: {Fat}.";
-		}
-	}
-
-	public class Sugar
-	{
-		public readonly string Sort;
-
-		public Sugar(string sort)
-		{
-			Sort = sort;
-		}
-		public override string ToString() {
-			return $"Sugar: {Sort}.";
-		}
-	}
-	class CoffeeBuilder
-	{
-		public CoffeeBuilder() { }
-
-		public CoffeeBuilder SetBlackCoffee() { return this; }
-		public CoffeeBuilder SetCubanoCoffee() { return this; }
-		public CoffeeBuilder SetAntoccinoCoffee() { return this; }
-
-		public CoffeeBuilder WithMilk(double fat) { return this; }
-		public CoffeeBuilder WithSugar(string sort) { return this; }
-
-		public Coffee Build() { return new Coffee("", new List<Milk>(), new List<Sugar>()); }
-	};
 
 	public static class SampleTests
 	{
